@@ -1,4 +1,4 @@
-// barra-nav.component.ts
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./barra-nav.component.css']
 })
 export class BarraNavComponent {
-  menuOpen: boolean = false;
 
-  toggleMenu(): void {
-    this.menuOpen = !this.menuOpen;
-  }
 }
 
