@@ -34,7 +34,7 @@ export class FormEditarComponent {
           Nombre: empleado.Nombre,
           Apellido: empleado.Apellido,
           Edad: empleado.Edad,
-          CorreoElectronico: empleado.correoElectronico,
+          correoElectronico: empleado.correoElectronico,
           Telefono: empleado.Telefono,
           Departamento: empleado.Departamento,
           Puesto: empleado.Puesto,
