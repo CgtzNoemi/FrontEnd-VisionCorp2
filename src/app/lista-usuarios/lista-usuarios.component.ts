@@ -59,6 +59,7 @@ export class ListaUsuariosComponent implements OnInit, OnDestroy, AfterViewInit 
     this.router.navigate(['/detalle-empleado', id]);
   }
 
+
   openModal(id: number) {
     this.empleadoAEliminarId = id;
     const ModalDiv = document.getElementById('ModalEliminar');
