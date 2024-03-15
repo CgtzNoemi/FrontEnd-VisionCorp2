@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { catchError, map } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
 import { Empleado } from "./empleado";
-import { throwError } from "rxjs";
+import { Observable, throwError } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -44,7 +44,7 @@ export class ApiService {
               console.error('Error al crear el empleado:', error);
               return throwError(() => error);
             })
-          );
+        );
     }
       
 
@@ -52,5 +52,38 @@ export class ApiService {
         return this.httpClient.get<Empleado[]>(this.dbUrl + '/leerEmpleados.php')
             .pipe(map(empleados => empleados));
     }
+
+    obtenerEmpleadoPorId(id: number): Observable<Empleado> {
+        return this.httpClient.get<Empleado>(`${this.dbUrl}/ObtenerEmpleadoID.php?id=${id}`)
+          .pipe(
+            catchError(this.handleError)
+          );
+    }
+
+    private handleError(error: any) {
+        console.error('Error al obtener los detalles del empleado:', error);
+        return throwError(() => error);
+    }
+
+    public editarEmpleado(id: number, empleado: Empleado) {
+        return this.httpClient.post<any>(`${this.dbUrl}/editarEmpleado.php?id=${id}`, empleado)
+          .pipe(
+            catchError((error) => {
+              console.error('Error al editar el empleado:', error);
+              return throwError(() => error);
+            })
+          );
+    }
+
+    public borrarEmpleado(id: number) {
+        return this.httpClient.post<any>(`${this.dbUrl}/borrarEmpleado.php`, { EmpleadoID: id })
+          .pipe(
+            catchError((error) => {
+              console.error('Error al eliminar el empleado:', error);
+              return throwError(() => error);
+            })
+          );
+    }
+         
 
 }

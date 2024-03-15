@@ -20,4 +20,20 @@
     border-color: #d2f1f8;
 }
 
+.modal-header {
+    background-color: #1B1E3B;
+    color: white;
+}
+.btn-close {
+    background-color: #d2f1f8;
+}
+
+.ojo {
+    color: white;
+}
+
+.bote {
+    color: white;
+}
+
 

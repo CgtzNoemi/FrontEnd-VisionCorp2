@@ -2,8 +2,7 @@ import { OnInit, OnDestroy, AfterViewInit, Component, ChangeDetectorRef, ViewChi
 import { ApiService } from '../api.service';
 import { Empleado } from '../empleado';
 import { Subject } from 'rxjs';
-import { BarraNavComponent } from '../barra-nav/barra-nav.component';
-
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -13,13 +12,16 @@ declare var $: any;
   styleUrls: ['./lista-usuarios.component.css']
 })
 export class ListaUsuariosComponent implements OnInit, OnDestroy, AfterViewInit {
-  
+
   empleados: Empleado[] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   @ViewChild('tabla', { static: false }) tabla!: ElementRef | undefined;
+  empleado: any;
 
-  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
+  empleadoAEliminarId: number | null = null;
+
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -49,12 +51,46 @@ export class ListaUsuariosComponent implements OnInit, OnDestroy, AfterViewInit 
     this.dtTrigger.unsubscribe();
   }
 
-  editarEmpleado() {
-   
+  editarEmpleado(id: number) {
+    this.router.navigate(['/editar-empleado', id]);
   }
 
-  borrarEmpleado() {
-    
+  verDetalle(id: number) {
+    this.router.navigate(['/detalle-empleado', id]);
+  }
+
+  openModal(id: number) {
+    this.empleadoAEliminarId = id;
+    const ModalDiv = document.getElementById('ModalEliminar');
+    if (ModalDiv != null) {
+      ModalDiv.style.display = 'block';
+      ModalDiv.style.overflow = 'hidden';
+      ModalDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    }
+  }
+
+  closeModal() {
+    this.empleadoAEliminarId = null;
+    const ModalDiv = document.getElementById('ModalEliminar');
+    if (ModalDiv != null) {
+      ModalDiv.style.display = 'none';
+    }
+  }
+
+  borrarEmpleado(): void {
+    if (this.empleadoAEliminarId) {
+      this.apiService.borrarEmpleado(this.empleadoAEliminarId).subscribe({
+        next: (response: any) => {
+          console.log(response.mensaje);
+          console.log('Borrando empleado con ID:', this.empleadoAEliminarId);
+          this.router.navigateByUrl('/', {replaceUrl: true}).then(() =>
+          this.router.navigate(['/lista-usuarios']));
+        },
+        error: (error: any) => {
+          console.error('Error al eliminar el empleado:', error);
+        }
+      });
+    }
   }
 }
 

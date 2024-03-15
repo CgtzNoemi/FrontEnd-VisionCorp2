@@ -1,17 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand ms-3" routerLink="/dashboard">Dashboard</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/crear-usuario">Crear registro</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/lista-usuarios">Registros</a>
-      </li>
-    </ul>
+<nav>
+  <input type="checkbox" id="menu">
+  <div class="contenedor-logo">
+    <a href=""><img src="/assets/imagenes/1.png" alt="Logo"></a>
   </div>
-</nav>
-
-
-
+  <div class="fondo">
+    <label for="menu"> ☰ </label>
+  </div>
   
+  <ul>
+
+    <li class="nav-item">
+      <div class="d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-caret-down-fill me-2" viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+        <a class="nav-link m-0" routerLink="/dashboard">Dashboard</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <div class="d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-caret-down-fill me-2" viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+        <a class="nav-link" routerLink="/lista-usuarios">Registros de empleados</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <div class="d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill me-2 ms-4" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        <a class="nav-link" routerLink="/crear-usuario">Registrar empleado nuevo</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <div class="d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-caret-down-fill me-2" viewBox="0 0 16 16">
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+        </svg>
+        <a class="nav-link" routerLink="/home">Cerrar sesión</a>
+      </div>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,103 @@
+<div class="container col-8 fondo p-5 mt-5 mb-4 rounded">
+    <div class="mb-4">
+        <button class="btn regresar" routerLink="/lista-usuarios">
+            <div class="d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg>
+                <p class="m-0">Regresar al listado</p>
+            </div>
+        </button>
+    </div>
+    
+    <div class="card">
+        <div class="card-header titulo">
+            Datos personales
+        </div>
+        <div class="card-body cuerpo">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Nombre(s):</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Nombre" [ngModel]="empleado.Nombre" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Apellidos:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Apellido" [ngModel]="empleado.Apellido"
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Edad:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Edad" [ngModel]="empleado.Edad" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Correo electrónico:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="CorreoElectronico"
+                                [ngModel]="empleado.CorreoElectronico" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Teléfono:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Telefono" [ngModel]="empleado.Telefono"
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header titulo">
+            Datos laborales
+        </div>
+        <div class="card-body cuerpo">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Departamento:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Datos" [ngModel]="empleado.Departamento"
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Puesto:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Puesto" [ngModel]="empleado.Puesto"
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="info">Fecha de ingreso:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="FechaIngreso" [ngModel]="empleado.FechaIngreso" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

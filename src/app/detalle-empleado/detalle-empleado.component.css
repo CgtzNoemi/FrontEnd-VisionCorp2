@@ -1,0 +1,15 @@
+.fondo {
+    background-color: #1B1E3B;
+}
+.titulo {
+    background-color: #01A9C8;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+.cuerpo {
+    background-color: #E9F6F9;
+}
+.regresar {
+    background-color: #E9F6F9;
+}

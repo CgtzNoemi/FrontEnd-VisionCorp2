@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormCrearComponent } from './form-crear/form-crear.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { FormEditarComponent } from './form-editar/form-editar.component';
+import { DetalleEmpleadoComponent } from './detalle-empleado/detalle-empleado.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'crear-usuario', component: FormCrearComponent},
   { path: 'lista-usuarios', component: ListaUsuariosComponent},
+  { path: 'editar-empleado/:id', component: FormEditarComponent },
+  { path: 'detalle-empleado/:id', component: DetalleEmpleadoComponent}
 ];
 
 @NgModule({

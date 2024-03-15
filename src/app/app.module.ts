@@ -13,6 +13,8 @@ import { FormCrearComponent } from './form-crear/form-crear.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { DataTablesModule } from 'angular-datatables';
 import { BarraNavComponent } from './barra-nav/barra-nav.component';
+import { FormEditarComponent } from './form-editar/form-editar.component';
+import { DetalleEmpleadoComponent } from './detalle-empleado/detalle-empleado.component';
 
 
 
@@ -27,7 +29,9 @@ import { BarraNavComponent } from './barra-nav/barra-nav.component';
     NavbarComponent,
     FormCrearComponent,
     ListaUsuariosComponent,
-    BarraNavComponent
+    BarraNavComponent,
+    FormEditarComponent,
+    DetalleEmpleadoComponent
   ],
   imports: [
     BrowserModule,

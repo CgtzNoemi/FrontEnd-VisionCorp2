@@ -12,12 +12,6 @@ import { Router } from '@angular/router';
 export class FormCrearComponent {
   formulario: FormGroup;
 
-  opcionesDePuestos = {
-    Finanzas: ['Contador Senior', 'Analista Financiero', 'Especialista en Impuestos', 'Gestor de Tesorería'],
-    Legal: ['Abogado Principal', 'Especialista en Propiedad Intelectual', 'Especialista en Contratos', 'Abogado de Cumplimiento', 'Abogado de Litigios'],
-    Marketing: ['Director de Marketing', 'Especialista en Estrategia de Contenidos', 'Especialista en SEO/SEM', 'Gerente de Eventos', 'Analista de Investigación de Mercado']
-  };
-
   constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) {
     this.formulario = this.fb.group({
       Nombre: ['', [Validators.required, Validators.minLength(3)]],
@@ -36,7 +30,7 @@ export class FormCrearComponent {
       this.apiService.crearEmpleado(this.formulario.value).subscribe({
         next: (response: any) => {
           console.log(response.mensaje);
-          this.router.navigate(['/lista-usuarios']); // Redirección aquí
+          this.router.navigate(['/lista-usuarios']); 
         },
         error: (error) => {
           console.error('Error al crear el empleado:', error);
