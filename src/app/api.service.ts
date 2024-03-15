@@ -10,7 +10,7 @@ import { Observable, throwError } from "rxjs";
 
 export class ApiService {
     
-    dbUrl: string = "https://backend-visioncorp-production-f74c.up.railway.app";
+    dbUrl: string = "http://localhost/PlataformaRH/backend/";
     router: any;
     constructor(private httpClient: HttpClient) {}
 
